@@ -31,7 +31,7 @@ public class ListaGenerica <T extends  Comparable<T>> {
     }
 
 
-    // 5* Ordena segun el tipo de elemento (String, Int...)
+    // 5*
     public void ordenar() {
         Collections.sort(this.lista);
     }

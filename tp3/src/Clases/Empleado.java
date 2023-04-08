@@ -54,7 +54,7 @@ public class Empleado {
                 "Nombre:'" + this.nombre + '\'' +
                 ", Apellido:'" + this.apellido + '\'' +
                 ", Legajo:'" + this.legajo + '\'' +
-                ", Años trabajados:'" + this.aniosTrabajados + '\'' +
+                ", Años trabajados:'" + this.aniosTrabajados +
                 '}';
     }
 }

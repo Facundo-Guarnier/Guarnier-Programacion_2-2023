@@ -22,6 +22,8 @@ public class EmpleadoSet extends Empleado {
                 && this.getAniosTrabajados().equals(otroEmpleado.getAniosTrabajados());
     }
 
+
+    // Se utiliza en el equals, tiene que devolver si o si un numero.
     @Override
     public int hashCode() {
         return this.getNombre().hashCode() +
