@@ -42,18 +42,22 @@
             4. Una excepción para la función 10 si el elemento en la lista no existe.
 */
 
-import Clases.Empleado;
-import Clases.EmpleadoSet;
-import Clases.ListaGenerica;
+import Clases.*;
+import Excepciones.ElementoInexistenteExcepcion;
+import Excepciones.IndiceMayorExcepcion;
+import Excepciones.ListaVaciaExcepcion;
+import Excepciones.ParametroNegativoExepcion;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        ejercicio1();
-        ejercicio2();
-        ejercicio3();
+//        ejercicio1();
+//        ejercicio2();
+//        ejercicio3();
+        ejercicio4y5();
     }
 
     public static void ejercicio1() {
@@ -95,6 +99,7 @@ public class Main {
             System.out.println(empleado);
         }
     }
+
     public static void ejercicio2() {
         System.out.println("++++++++++++++++++++++++++ Ejercicio 2 ++++++++++++++++++++++++++");
         ListaGenerica<String> listaDeEnteros = new ListaGenerica<>();
@@ -121,7 +126,7 @@ public class Main {
         listaDeEnteros.barajar();
 
         //7*
-        listaDeEnteros.agregar_x_lugar("X",2);
+        listaDeEnteros.agregar_x_lugar("X", 2);
 
         //8*
         System.out.println(listaDeEnteros.obtener_x_lugar(2));
@@ -142,10 +147,20 @@ public class Main {
         ListaGenerica<String> listaDeEnteros = new ListaGenerica<>();
 
         //9* Lista vacia
-        System.out.println(listaDeEnteros.except_obtener_primero());
+        try {
+            System.out.println(listaDeEnteros.except_obtener_primero());
+        } catch (ListaVaciaExcepcion e) {
+            System.out.println("Lista vacia.");
+            e.printStackTrace();
+        }
 
         //10* Lista vacia
-        System.out.println(listaDeEnteros.except_obtener_ultimo());
+        try {
+            System.out.println(listaDeEnteros.except_obtener_ultimo());
+        } catch (ListaVaciaExcepcion e) {
+            System.out.println("Lista vacia.");
+            e.printStackTrace();
+        }
 
         listaDeEnteros.agregar("A");
         listaDeEnteros.agregar("B");
@@ -153,14 +168,95 @@ public class Main {
         listaDeEnteros.agregar("D");
 
         //7*
-        listaDeEnteros.except_agregar_x_lugar("X",10);
+        try {
+            listaDeEnteros.except_agregar_x_lugar("X", 10);
+        } catch (IndiceMayorExcepcion e) {
+            System.out.println("Indice invalido.");
+            e.printStackTrace();
+        }
 
         //8*
-        System.out.println(listaDeEnteros.except_obtener_x_lugar(10));
+        try {
+            System.out.println(listaDeEnteros.except_obtener_x_lugar(10));
+        } catch (IndiceMayorExcepcion e) {
+            System.out.println("Indice invalido.");
+            e.printStackTrace();
+        }
 
         //11*
-        listaDeEnteros.except_remover_x_lugar(10);
+        try {
+            listaDeEnteros.except_remover_x_lugar(10);
+        } catch (ElementoInexistenteExcepcion e) {
+            System.out.println("Indice invalido.");
+            e.printStackTrace();
+        }
 
+    }
 
+    public static void ejercicio4y5() {
+        System.out.println("++++++++++++++++++++++++++ Ejercicio 4 y 5 ++++++++++++++++++++++++++");
+
+        System.out.println("---------------------- Figuras con valores positivos ----------------------");
+        ArrayList<FiguraGeometrica> miLista = new ArrayList<>();
+
+        try {
+            miLista.add(new Triangulo(2, 2, 2));
+            miLista.add(new Cuadrado(2.6));
+            miLista.add(new Circulo(8.1));
+            miLista.add(new Triangulo(9.5, 1, 7.9));
+            miLista.add(new Cuadrado(1.1));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+        System.out.println("Mostrando miLista:");
+        for (FiguraGeometrica figuara : miLista) {
+            System.out.println(figuara);
+        }
+
+        System.out.println("---------------------- Figuras con valores negativos ----------------------");
+        ArrayList<FiguraGeometrica> miListaConErrores = new ArrayList<>();
+
+        try {
+            miListaConErrores.add(new Triangulo(-2, 2, 2,-8,9));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+
+        try {
+            miListaConErrores.add(new Cuadrado(2.6,1,-9));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+
+        try {
+            miListaConErrores.add(new Circulo(-8.1,3,3));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+
+        try {
+            miListaConErrores.add(new Triangulo(-9.5, 1, 7.9,5,-6));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+
+        try {
+            miListaConErrores.add(new Cuadrado(-1.1,8,1));
+        }  catch (ParametroNegativoExepcion e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Mostrando miListaConErrores:");
+        for (FiguraGeometrica figuara : miListaConErrores) {
+            System.out.println(figuara);
+        }
+    }
+
+    public static void ejercicio6() {
+        System.out.println("++++++++++++++++++++++++++ Ejercicio 6 ++++++++++++++++++++++++++");
+    }
+
+    public static void ejercicio7() {
+        System.out.println("++++++++++++++++++++++++++ Ejercicio 7 ++++++++++++++++++++++++++");
     }
 }

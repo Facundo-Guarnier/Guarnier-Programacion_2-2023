@@ -1,4 +1,8 @@
 package Clases;
+import Excepciones.ElementoInexistenteExcepcion;
+import Excepciones.IndiceMayorExcepcion;
+import Excepciones.ListaVaciaExcepcion;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -75,54 +79,51 @@ public class ListaGenerica <T extends  Comparable<T>> {
     //------------------------- Excepciones -------------------------
 
     // 7*
-    public void except_agregar_x_lugar(T elemento, int indice) {
+    public void except_agregar_x_lugar(T elemento, int indice) throws IndiceMayorExcepcion {
         try {
             this.lista.add(indice, elemento);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Indice invalido.");
+            throw new IndiceMayorExcepcion(e);
         }
     }
 
 
     // 8*
-    public T except_obtener_x_lugar(int indice) {
+    public T except_obtener_x_lugar(int indice) throws IndiceMayorExcepcion {
         try {
             return this.lista.get(indice);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Indice invalido.");
-            return null;
+            throw new IndiceMayorExcepcion(e);
         }
     }
 
 
     // 9*
-    public T except_obtener_primero() {
+    public T except_obtener_primero() throws ListaVaciaExcepcion {
         try {
             return this.lista.get(0);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Lista vacia.");
-            return null;
+            throw new ListaVaciaExcepcion(e);
         }
     }
 
 
     // 10*
-    public T except_obtener_ultimo() {
+    public T except_obtener_ultimo() throws ListaVaciaExcepcion {
         try {
             return this.lista.get(this.lista.size() - 1);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Lista vacia.");
-            return null;
+            throw new ListaVaciaExcepcion(e);
         }
     }
 
 
     // 11*
-    public void except_remover_x_lugar(int indice) {
+    public void except_remover_x_lugar(int indice) throws ElementoInexistenteExcepcion {
         try {
             this.lista.remove(indice);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Indice invalido.");
+            throw new ElementoInexistenteExcepcion(e);
         }
     }
 

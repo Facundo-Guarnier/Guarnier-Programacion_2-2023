@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db898003-8d61-4f8e-8ab2-0cc38ea1a87a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Clases/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/EmpleadoSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/EmpleadoSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Clases/Circulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Clases/Cuadrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Clases/FiguraGeometrica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Clases/Triangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Excepciones/ElementoInexistenteExcepcion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Excepciones/IndiceMayorExcepcion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Excepciones/ListaVaciaExcepcion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Excepciones/ParametroNegativoExepcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp3/Clases/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3/Clases/Empleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp3/Clases/EmpleadoSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3/Clases/EmpleadoSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp3/Clases/ListaGenerica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3/Clases/ListaGenerica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/ListaGenerica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ListaGenerica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +30,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,13 +49,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Excepciones" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="tp3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,6 +100,24 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Clases/Cuadrado.java</url>
+          <line>56</line>
+          <properties class="Clases.Cuadrado" method="setLado">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>195</line>
+          <properties class="Main" method="ejercicio4">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
