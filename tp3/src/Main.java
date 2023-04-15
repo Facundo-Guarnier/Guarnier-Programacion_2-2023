@@ -43,21 +43,18 @@
 */
 
 import Clases.*;
-import Excepciones.ElementoInexistenteExcepcion;
-import Excepciones.IndiceMayorExcepcion;
-import Excepciones.ListaVaciaExcepcion;
-import Excepciones.ParametroNegativoExepcion;
+import Excepciones.*;
 
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-//        ejercicio1();
-//        ejercicio2();
-//        ejercicio3();
+        ejercicio1();
+        ejercicio2();
+        ejercicio3();
         ejercicio4y5();
+        ejercicio6();
+        ejercicio7();
     }
 
     public static void ejercicio1() {
@@ -151,7 +148,7 @@ public class Main {
             System.out.println(listaDeEnteros.except_obtener_primero());
         } catch (ListaVaciaExcepcion e) {
             System.out.println("Lista vacia.");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
         //10* Lista vacia
@@ -159,7 +156,7 @@ public class Main {
             System.out.println(listaDeEnteros.except_obtener_ultimo());
         } catch (ListaVaciaExcepcion e) {
             System.out.println("Lista vacia.");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
         listaDeEnteros.agregar("A");
@@ -172,7 +169,7 @@ public class Main {
             listaDeEnteros.except_agregar_x_lugar("X", 10);
         } catch (IndiceMayorExcepcion e) {
             System.out.println("Indice invalido.");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
         //8*
@@ -180,7 +177,7 @@ public class Main {
             System.out.println(listaDeEnteros.except_obtener_x_lugar(10));
         } catch (IndiceMayorExcepcion e) {
             System.out.println("Indice invalido.");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
         //11*
@@ -188,7 +185,7 @@ public class Main {
             listaDeEnteros.except_remover_x_lugar(10);
         } catch (ElementoInexistenteExcepcion e) {
             System.out.println("Indice invalido.");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
     }
@@ -206,8 +203,9 @@ public class Main {
             miLista.add(new Triangulo(9.5, 1, 7.9));
             miLista.add(new Cuadrado(1.1));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Esto no se deberia ver.");
         }
+
         System.out.println("Mostrando miLista:");
         for (FiguraGeometrica figuara : miLista) {
             System.out.println(figuara);
@@ -219,31 +217,36 @@ public class Main {
         try {
             miListaConErrores.add(new Triangulo(-2, 2, 2,-8,9));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Parametro negativo.");
+//            e.printStackTrace();
         }
 
         try {
             miListaConErrores.add(new Cuadrado(2.6,1,-9));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Parametro negativo.");
+//            e.printStackTrace();
         }
 
         try {
             miListaConErrores.add(new Circulo(-8.1,3,3));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Parametro negativo.");
+//            e.printStackTrace();
         }
 
         try {
             miListaConErrores.add(new Triangulo(-9.5, 1, 7.9,5,-6));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Parametro negativo.");
+//            e.printStackTrace();
         }
 
         try {
             miListaConErrores.add(new Cuadrado(-1.1,8,1));
         }  catch (ParametroNegativoExepcion e) {
-            e.printStackTrace();
+            System.out.println("Parametro negativo.");
+//            e.printStackTrace();
         }
 
         System.out.println("Mostrando miListaConErrores:");
@@ -254,9 +257,73 @@ public class Main {
 
     public static void ejercicio6() {
         System.out.println("++++++++++++++++++++++++++ Ejercicio 6 ++++++++++++++++++++++++++");
+        List<Empleado> listaEmpleados = new ArrayList<>();
+        listaEmpleados.add(new Empleado("Facundo", "Guarnier", 60157, 4));
+        listaEmpleados.add(new Empleado("Rodrigo", "De Paul", 3333, 3));
+        listaEmpleados.add(new Empleado("Lionel", "Messi", 4444, 4));
+        listaEmpleados.add(new Empleado("Lionel", "Scaloni", 5555, 5));
+        listaEmpleados.add(new Empleado("Sergio", "Agüero", 6666, 6));
+
+        Map<String, Empleado> mapaEmpleados = new HashMap<>();
+
+        for (Empleado empleado : listaEmpleados) {
+            mapaEmpleados.put(empleado.getApellido() + "," + empleado.getNombre(), empleado);
+        }
+        System.out.println(mapaEmpleados);
+
     }
 
     public static void ejercicio7() {
         System.out.println("++++++++++++++++++++++++++ Ejercicio 7 ++++++++++++++++++++++++++");
+
+        try {
+            System.out.println(Empleado.fromString("nombre=Pablo, apellido=Marquez, legajo=001, aniosTrabajados=10"));
+
+            System.out.println(Empleado.fromString("nombre=Pablo,apellido=Marquez,legajo=001,aniosTrabajados=10"));
+
+            System.out.println(Empleado.fromString("nombre=Pablo ,apellido=Marquez ,legajo=001, aniosTrabajados=10"));
+
+            System.out.println(Empleado.fromString("Nombre=Pablo,apellidO=Marquez ,LEGAJO=001, ANIOStrabajados=10"));
+
+            System.out.println(Empleado.fromString("nombre=Pablo,legajo=001,aniosTrabajados=10,apellido=Marquez"));
+
+        } catch (Exception e) {
+            System.out.println("Esto no se deberia ver.");
+        }
+
+        try {
+            System.out.println(Empleado.fromString("legajo=001,aniosTrabajados=10,apellido=Marquez"));
+
+        } catch (CampoNoPresenteExcepcion e) {
+            System.out.println("Faltan campos.");
+//            e.printStackTrace();
+
+        } catch (Exception e) {
+            System.out.println("Esto no se deberia ver.");
+        }
+
+
+        try {
+            System.out.println(Empleado.fromString("nombre=,legajo=001,aniosTrabajados=10,apellido=Marquez"));
+
+        } catch (ValorVacioExcepcion e) {
+            System.out.println("Un atributo no tiene dato.");
+//            e.printStackTrace();
+
+        } catch (Exception e) {
+            System.out.println("Esto no se deberia ver. ValorVacioExcepcion///" + e);
+        }
+
+        try {
+            System.out.println(Empleado.fromString("nombre=Pablo,legajo=001,aniosTrabajados=10.30,apellido=Marquez"));
+
+        } catch (AniosTrabajadosExcepcion e) {
+            System.out.println("Los años no son int.");
+//            e.printStackTrace();
+
+        } catch (Exception e) {
+            System.out.println("Esto no se deberia ver.");
+        }
+
     }
 }
