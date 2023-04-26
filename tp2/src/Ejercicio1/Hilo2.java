@@ -56,6 +56,7 @@ public class Hilo2 implements Runnable{
         if (iteracion >= 10 && iteracion <= 40) {
             this.iteracion = iteracion;
         } else {
+            System.out.println("Iteración fuera de rango.");
             this.iteracion = random.nextInt(31) + 10;
         }
     }
@@ -69,6 +70,7 @@ public class Hilo2 implements Runnable{
         if (demora >= 50 && demora <= 999) {
             this.demora = demora;
         } else {
+            System.out.println("Demora fuera de rango.");
             this.demora = random.nextInt(950) + 50;
         }
 
