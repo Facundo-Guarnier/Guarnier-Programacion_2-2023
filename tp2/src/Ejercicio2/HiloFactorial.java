@@ -18,7 +18,7 @@ public class HiloFactorial implements Runnable {
         while (true) {
 
             // Seccion critica
-            synchronized (numeros) {
+            synchronized (this.numeros) {
                 if (this.numeros.isEmpty()) {
                     break;
                 }
