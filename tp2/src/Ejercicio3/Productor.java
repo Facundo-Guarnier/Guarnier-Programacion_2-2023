@@ -19,6 +19,8 @@ public class Productor implements Runnable {
                 e.printStackTrace();
             }
         }
+        System.out.println("\n+++++ Fin productor\n");
+        mi_lista.setNotificado(true);
     }
 
 }

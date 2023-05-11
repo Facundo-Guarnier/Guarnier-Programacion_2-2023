@@ -1,6 +1,5 @@
 package Ejercicio3;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -15,13 +14,13 @@ public class MainE3 {
         Thread p = new Thread(p_implements);
         p.start();
 
-        HiloFactorial h1_implements = new HiloFactorial(mi_lista, "hilo1");
+        Consumidor h1_implements = new Consumidor(mi_lista, "hilo1");
         Thread h1 = new Thread(h1_implements);
 
-        HiloFactorial h2_implements = new HiloFactorial(mi_lista, "hilo2");
+        Consumidor h2_implements = new Consumidor(mi_lista, "hilo2");
         Thread h2 = new Thread(h2_implements);
 
-        HiloFactorial h3_implements = new HiloFactorial(mi_lista, "hilo3");
+        Consumidor h3_implements = new Consumidor(mi_lista, "hilo3");
         Thread h3 = new Thread(h3_implements);
 
         h1.start();

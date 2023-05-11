@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Lista {
     private Queue<Integer> cola;
-    private int capacidad;
+    private final int capacidad;
 
     public Lista() {
         cola = new LinkedList<>();
@@ -15,6 +15,7 @@ public class Lista {
     public synchronized void agregar(int valor) {
         while (cola.size() == capacidad) {
             try {
+                System.out.println("Lista llena ...");
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -27,6 +28,7 @@ public class Lista {
     public synchronized int retirar() {
         while (cola.isEmpty()) {
             try {
+                System.out.println("Lista vacía ...");
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -36,12 +38,6 @@ public class Lista {
         System.out.println("Consumidor quita " + valor + " de la cola.");
         notifyAll();
         return valor;
-    }
-
-
-    @Override
-    public synchronized String toString(){
-        return this.cola.toString();
     }
 
 }

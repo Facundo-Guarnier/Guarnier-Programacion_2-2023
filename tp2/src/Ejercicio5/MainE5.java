@@ -14,14 +14,13 @@ public class MainE5 {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
         List<Future> resultados = new ArrayList<>();
 
-
         Productor p = new Productor(mi_lista);
         executorService.submit(p);
 
 
         for(int i = 0; i < 40; i++) {
-            HiloFactorial c  = new HiloFactorial(mi_lista, "Consumidor" + i);
-            Future<String> resultado = executorService.submit(c);
+            Consumidor c  = new Consumidor(mi_lista, "Consumidor" + i);
+            Future<List<Object>> resultado = executorService.submit(c);
 
             resultados.add(resultado);
         }
@@ -35,16 +34,33 @@ public class MainE5 {
             for (int i = 0; i < resultados.size(); i++) {
                 if (resultados.get(i).isDone()) {
                     try {
-                        System.out.println("Resultado de ejecución: " + resultados.get(i).get());
+                        Future<List<Object>> resultado = resultados.get(i);
+                        List<Object> r = resultado.get();  
+
+                        if ((int) r.get(2) > 30000000) {
+                            System.out.println(
+                                "Resultado de ejecución: " +
+                                "Hilo " + r.get(0) + " procesando la lista. " +
+                                "Valor a calcular: " + r.get(1) + ". " +
+                                "Resultado: " + r.get(2) + ". " +
+                                "El resultado es mayor a 30.000.000"
+                            );
+                        } else {
+                            System.out.println(
+                                "Resultado de ejecución: " +
+                                "Hilo " + r.get(0) + " procesando la lista. " +
+                                "Valor a calcular: " + r.get(1) + ". " +
+                                "Resultado: " + r.get(2) + ". "
+                            );
+                        }
 
                         resultados.remove(i);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-
                 }
             }
-            executorService.shutdown();
         }
+        executorService.shutdown();
     }
 }

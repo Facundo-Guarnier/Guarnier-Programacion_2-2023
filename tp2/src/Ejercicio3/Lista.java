@@ -6,6 +6,7 @@ import java.util.Queue;
 public class Lista {
     private Queue<Integer> cola;
     private int capacidad;
+    private boolean notificado = false;
 
     public Lista() {
         cola = new LinkedList<>();
@@ -25,28 +26,37 @@ public class Lista {
         System.out.println("Productor agrega " + valor + " en la cola.");
         notifyAll();
     }
+
+
     public synchronized int retirar() {
         while (cola.isEmpty()) {
-            try {
-                System.out.println("Lista vacia...");
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (!this.getNotificado()) {
+                try {
+                    System.out.println("Lista vacia, queda para producir...");
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else if (this.getNotificado()) {
+                System.out.println("Lista vacia, NO queda para producir...");
+                return -1;
             }
         }
         int valor = cola.remove();
         System.out.println("Consumidor quita " + valor + " de la cola.");
         notifyAll();
         return valor;
+    
     }
 
-    public Integer quedan(){
-        return cola.size();
+
+    //*Getter y setter
+    public boolean getNotificado() {
+        return notificado;
     }
 
-    @Override
-    public String toString(){
-        return this.cola.toString();
+    public void setNotificado(boolean notificado) {
+        this.notificado = notificado;
     }
 
 }

@@ -16,10 +16,9 @@ public class Hilo implements Callable<Void> {
     }
 
     public Hilo(String nombre, int iteracion, int demora) {
-        this.nombre = nombre;
+        this.setNombre(nombre);
         this.setIteracion(iteracion);
         this.setDemora(demora);
-
     }
 
 
@@ -35,11 +34,6 @@ public class Hilo implements Callable<Void> {
 
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        return this.nombre + ": demora=" + this.demora + ", iteracion=" + this.iteracion;
     }
 
 

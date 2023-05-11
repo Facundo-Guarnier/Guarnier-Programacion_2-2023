@@ -2,33 +2,38 @@ package Ejercicio3;
 
 import java.util.List;
 
-public class HiloFactorial implements Runnable {
+public class Consumidor implements Runnable {
 
     protected Lista numeros;
     protected String nombre;
 
-    public HiloFactorial(Lista numeros, String nombre) {
+    public Consumidor(Lista numeros, String nombre) {
         this.numeros = numeros;
         this.nombre = nombre;
     }
 
-    @Override
+
     public void run() {
         int valor;
-        int quedan;
-        while (true) {
+        boolean continuar = true;
+
+        while (continuar) {
 
             valor = this.numeros.retirar();
-            quedan = this.numeros.quedan();
+
+            if (valor == -1) {
+                System.out.println("\n+++++ Finalizando " + this.nombre + "\n");
+                continuar = false;
+                continue;
+            }
 
             int resultado = 1;
             for (int i = 2; i <= valor; i++) {
                 resultado *= i;
             }
             System.out.println(
-                    "Hilo " + this.nombre + " procesando la lista. " +
-                            "Valor a calcular: " + valor + ". Resultado: " + resultado +
-                            ". Quedan " + quedan + " elementos en la lista por procesar."
+                "Hilo " + this.nombre + " procesando la lista. " +
+                "Valor a calcular: " + valor + ". Resultado: " + resultado
             );
 
             try {
