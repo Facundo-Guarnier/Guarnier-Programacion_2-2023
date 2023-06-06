@@ -1,10 +1,10 @@
 package Ejercicio2;
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import Ejercicio2.HiloFactorial;
+//import Ejercicio2.HiloFactorial;
 
 public class MainE2 {
     public void ejercicio() {

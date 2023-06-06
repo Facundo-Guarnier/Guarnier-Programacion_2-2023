@@ -11,8 +11,8 @@ public class Main {
         // ejercicio1.ejercicio_b();
         // ejercicio1.ejercicio_c();
 
-        // MainE2 ejercicio2 = new MainE2();
-        // ejercicio2.ejercicio();
+        MainE2 ejercicio2 = new MainE2();
+        ejercicio2.ejercicio();
 
         // MainE3 ejercicio3 = new MainE3();
         // ejercicio3.ejercicio();
@@ -20,8 +20,8 @@ public class Main {
         // MainE4 ejercicio4 = new MainE4();
         // ejercicio4.ejercicio();
 
-        MainE5 ejercicio5 = new MainE5();
-        ejercicio5.ejercicio();
+        // MainE5 ejercicio5 = new MainE5();
+        // ejercicio5.ejercicio();
 
     }
 }
