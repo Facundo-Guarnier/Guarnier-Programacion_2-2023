@@ -1,0 +1,222 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "tp4_e2",
+    "dateExported": "2023-08-04T14:38:42.355Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "persona",
+            "containerId": "",
+            "created": "2023-08-04T14:37:27.094Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "domicilio",
+            "containerId": "",
+            "created": "2023-08-04T14:38:08.058Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "913bf685-5578-44e5-920f-90916eb6ce1a",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "get",
+            "url": "http://127.0.0.1:8080/persona/0",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-04T14:37:40.488Z",
+            "modified": "2023-08-04T14:37:40.488Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "560db473-cd3f-4bd9-9f62-395309ccd758",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "get",
+            "url": "http://127.0.0.1:8080/domicilio/0",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-04T14:38:19.578Z",
+            "modified": "2023-08-04T14:38:19.578Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0b874439-08fa-4628-86c0-d093a4b41f84",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "get All",
+            "url": "http://127.0.0.1:8080/persona",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-04T14:37:45.934Z",
+            "modified": "2023-08-04T14:37:45.934Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e0e9661b-f033-4640-8ef2-13bb85f11eb3",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "get All",
+            "url": "http://127.0.0.1:8080/domicilio",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-04T14:38:20.884Z",
+            "modified": "2023-08-04T14:38:20.884Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ca1271bc-75e3-4fb0-970c-0e77e549d2d5",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "post",
+            "url": "http://127.0.0.1:8080/persona",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-08-04T14:37:47.179Z",
+            "modified": "2023-08-04T14:37:47.179Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Viviana\",\n  \"apellido\": \"Quattrini\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "41ea07a0-2b5f-43a3-bc43-f7eafdcb71c0",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "post",
+            "url": "http://127.0.0.1:8080/domicilio",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-08-04T14:38:21.805Z",
+            "modified": "2023-08-04T14:38:21.805Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"calle\": \"Roca\",\n  \"numero\": 999,\n  \"localidad\": \"Villa Nueva\",\n  \"provincia\": \"Mendoza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2e3602ad-8e05-44ee-84a9-d757ae8dc454",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "delete ID",
+            "url": "http://127.0.0.1:8080/persona/2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-08-04T14:37:48.397Z",
+            "modified": "2023-08-04T14:37:48.397Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ed93bb61-aed3-4619-91d5-a92d1e5b319c",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "delete ID",
+            "url": "http://127.0.0.1:8080/domicilio/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-08-04T14:38:22.564Z",
+            "modified": "2023-08-04T14:38:22.564Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e3190f48-1e30-4ad9-b877-87144cb2f79e",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "delete Persona",
+            "url": "http://127.0.0.1:8080/persona",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-08-04T14:37:49.634Z",
+            "modified": "2023-08-04T14:37:49.634Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 1,\n  \"nombre\": \"Viviana\",\n  \"apellido\": \"Quattrini\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "422d7103-8571-40da-b016-e16d7ceb093c",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "delete Domicilio",
+            "url": "http://127.0.0.1:8080/domicilio",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-08-04T14:38:23.602Z",
+            "modified": "2023-08-04T14:38:23.602Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 0,\n  \"calle\": \"Rio Tunuyán\",\n  \"numero\": 1891,\n  \"localidad\": \"Villa Nueva\",\n  \"provincia\": \"Mendoza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b780bbf7-2f81-4584-8fba-3ffdab02bfbc",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "87d1f298-876a-4b44-80e5-060876c08635",
+            "name": "put",
+            "url": "http://127.0.0.1:8080/persona/2",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-08-04T14:37:50.773Z",
+            "modified": "2023-08-04T14:37:50.773Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Viviana Maria\",\n  \"apellido\": \"Quattrini\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6d879bea-1e00-42bf-997b-46cd882f7b9c",
+            "colId": "5ff1d3e4-6f0c-4ab9-832e-5fbf469620e4",
+            "containerId": "e05dc5ce-28be-4484-8583-8467889dfedf",
+            "name": "put",
+            "url": "http://127.0.0.1:8080/domicilio/3",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-08-04T14:38:24.884Z",
+            "modified": "2023-08-04T14:38:24.884Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"calle\": \"Julio Argentino Roca\",\n  \"numero\": 999,\n  \"localidad\": \"Villa Nueva\",\n  \"provincia\": \"Mendoza\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
