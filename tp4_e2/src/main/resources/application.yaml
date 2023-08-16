@@ -1,24 +1,26 @@
 server:
   port: 8080
+
 config:
   url: http://facundo-guarnier.com
   puerto: 8080
-  persona1:
-    id: 0
-    nombre: Facundo
+  personas:
+  - nombre: Facundo
     apellido: Guarnier
-  domicilio1:
-    calle: Rio Tunuyán
-    numero: 1891
+
+config-domicilios:
+  domicilios:
+  - calle: Libertad
+    numero: 600
     localidad: Villa Nueva
     provincia: Mendoza
-  domicilio2:
-    calle: San Martin
+
+  - calle: San Martin
     numero: 1500
     localidad: Mendoza
     provincia: Mendoza
-  domicilio3:
-    calle: Libertad
-    numero: 600
+
+  - calle: Rio Tunuyán
+    numero: 1891
     localidad: Villa Nueva
     provincia: Mendoza
